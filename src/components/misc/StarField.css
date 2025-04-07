@@ -1,0 +1,28 @@
+.starfield {
+    background: transparent;
+    width: 2px;
+    height: 2px;
+    background: white;
+    box-shadow: 
+      100px 200px white,
+      300px 400px white,
+      500px 100px white,
+      700px 300px white,
+      900px 250px white,
+      1100px 450px white,
+      1300px 150px white,
+      1500px 350px white,
+      1700px 50px white,
+      1900px 400px white;
+    animation: animStar 255s linear infinite;
+  }
+  
+  @keyframes animStar {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-500px);
+    }
+  }
+  

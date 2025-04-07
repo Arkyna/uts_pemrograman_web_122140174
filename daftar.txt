@@ -1,0 +1,44 @@
+
+FullName
+--------
+D:\Source\Semester 6\Pemweb RB\blog-website\node_modules
+D:\Source\Semester 6\Pemweb RB\blog-website\public
+D:\Source\Semester 6\Pemweb RB\blog-website\src
+D:\Source\Semester 6\Pemweb RB\blog-website\.gitignore
+D:\Source\Semester 6\Pemweb RB\blog-website\#onthetailwind.txt
+D:\Source\Semester 6\Pemweb RB\blog-website\daftar.txt
+D:\Source\Semester 6\Pemweb RB\blog-website\eslint.config.js
+D:\Source\Semester 6\Pemweb RB\blog-website\index.html
+D:\Source\Semester 6\Pemweb RB\blog-website\loremipsum.txt
+D:\Source\Semester 6\Pemweb RB\blog-website\package-lock.json
+D:\Source\Semester 6\Pemweb RB\blog-website\package.json
+D:\Source\Semester 6\Pemweb RB\blog-website\README.md
+D:\Source\Semester 6\Pemweb RB\blog-website\tailwind.config.js
+D:\Source\Semester 6\Pemweb RB\blog-website\vite.config.js
+D:\Source\Semester 6\Pemweb RB\blog-website\public\images
+D:\Source\Semester 6\Pemweb RB\blog-website\public\images\navbar.png
+D:\Source\Semester 6\Pemweb RB\blog-website\public\images\review.png
+D:\Source\Semester 6\Pemweb RB\blog-website\public\images\review2.png
+D:\Source\Semester 6\Pemweb RB\blog-website\public\images\Untitled-1.png
+D:\Source\Semester 6\Pemweb RB\blog-website\public\images\Untitled-1a.png
+D:\Source\Semester 6\Pemweb RB\blog-website\src\assets
+D:\Source\Semester 6\Pemweb RB\blog-website\src\components
+D:\Source\Semester 6\Pemweb RB\blog-website\src\App.jsx
+D:\Source\Semester 6\Pemweb RB\blog-website\src\index.css
+D:\Source\Semester 6\Pemweb RB\blog-website\src\main.jsx
+D:\Source\Semester 6\Pemweb RB\blog-website\src\assets\1.png
+D:\Source\Semester 6\Pemweb RB\blog-website\src\assets\2.png
+D:\Source\Semester 6\Pemweb RB\blog-website\src\assets\arkyna.png
+D:\Source\Semester 6\Pemweb RB\blog-website\src\assets\arrow-dwn.png
+D:\Source\Semester 6\Pemweb RB\blog-website\src\assets\game.jpg
+D:\Source\Semester 6\Pemweb RB\blog-website\src\assets\logo.png
+D:\Source\Semester 6\Pemweb RB\blog-website\src\assets\menu-open.png
+D:\Source\Semester 6\Pemweb RB\blog-website\src\assets\tech.png
+D:\Source\Semester 6\Pemweb RB\blog-website\src\assets\Untitled-1a.png
+D:\Source\Semester 6\Pemweb RB\blog-website\src\components\pages
+D:\Source\Semester 6\Pemweb RB\blog-website\src\components\pages\Extra.jsx
+D:\Source\Semester 6\Pemweb RB\blog-website\src\components\pages\Hero.jsx
+D:\Source\Semester 6\Pemweb RB\blog-website\src\components\pages\Navbar.jsx
+D:\Source\Semester 6\Pemweb RB\blog-website\src\components\pages\previews.jsx
+D:\Source\Semester 6\Pemweb RB\blog-website\src\components\pages\Title.jsx
+
