@@ -81,7 +81,7 @@ const Navbar = () => {
         </li>
       </ul>
 
-      <div className="relative w-8 h-8 lg:hidden right-6 top-6 z-20">
+      <div className="relative w-8 h-8 lg:hidden right-3 top-6 z-20">
         <img
           src={menu_open}
           alt="menu open"
