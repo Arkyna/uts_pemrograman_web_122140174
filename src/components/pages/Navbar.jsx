@@ -81,19 +81,18 @@ const Navbar = () => {
         </li>
       </ul>
 
-      {/* Container buat ikon menu dengan crossfade */}
-      <div className="relative w-8 h-8 lg:hidden right-4 top-4 z-20">
+      <div className="relative w-8 h-8 lg:hidden right-6 top-6 z-20">
         <img
           src={menu_open}
           alt="menu open"
           onClick={toggleMenu}
-          className={`absolute w-8 h-8 transition-opacity duration-300 cursor-pointer ${mobileMenu ? 'opacity-0' : 'opacity-100'}`}
+          className={`absolute w-[24px] h-[24px] transition-opacity duration-300 cursor-pointer ${mobileMenu ? 'opacity-0' : 'opacity-100'}`}
         />
         <img
           src={menu_close}
           alt="menu close"
           onClick={toggleMenu}
-          className={`absolute w-8 h-8 transition-opacity duration-300 cursor-pointer ${mobileMenu ? 'opacity-100' : 'opacity-0'}`}
+          className={`absolute w-[24px] h-[24px] transition-opacity duration-300 cursor-pointer ${mobileMenu ? 'opacity-100' : 'opacity-0'}`}
         />
       </div>
     </nav>
