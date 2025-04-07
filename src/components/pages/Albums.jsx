@@ -1,17 +1,10 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import bgImage from "../../assets/Untitled-1a.png";
-import album1Img from "../../assets/album1.png";
-import album2Img from "../../assets/album2.png";
 import LoadingScreen from '../misc/LoadingScreen';
 
 const getApiUrl = (endpoint) => {
   const baseUrl = import.meta.env.VITE_API_URL_1;
   return baseUrl.replace(':endpoint', endpoint);
-};
-
-const localAlbumImages = {
-  "1": album1Img,
-  "2": album2Img,
 };
 
 const useAlbumsData = () => {
@@ -51,6 +44,19 @@ const Album = () => {
     setFilterText(e.target.value);
   }, []);
 
+  const albumImagesModules = import.meta.glob('../../assets/album*.{jpg,png}', { eager: true });
+
+  const localAlbumImages = useMemo(() => {
+    const images = {};
+    for (const path in albumImagesModules) {
+      const match = path.match(/album(\d+)\.(png|jpg)$/);
+      if (match) {
+        images[match[1]] = albumImagesModules[path].default;
+      }
+    }
+    return images;
+  }, [albumImagesModules]);
+
   const filteredAlbums = useMemo(() => {
     return albums.filter(album =>
       album.albumName.toLowerCase().includes(filterText.toLowerCase())
@@ -66,7 +72,7 @@ const Album = () => {
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="container mx-auto py-20 text-[#F5F5F5]">
-        <h1 className="text-4xl font-bold text-center mb-10">Album Favorit Saya</h1>
+        <h1 className="text-4xl font-bold text-center mb-10">Only Memorables One</h1>
 
         <div className="mb-8 text-center">
           <input
@@ -98,7 +104,7 @@ const Album = () => {
                     Release Date: {new Date(album.releaseDate).toLocaleDateString()}
                   </p>
                 )}
-                {album.description && <p className="mt-2">{album.description}</p>}
+                {album.comment && <p className="mt-2">Comment: {album.comment}</p>}
               </div>
             </div>
           ))}

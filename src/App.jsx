@@ -19,7 +19,7 @@ const Home = () => (
     <StarField />
     <Hero
       defaultName="Guest"
-      description="This page was originally designed for my midterm exams; however, in a rare creative drought, I ended up embracing this kind of blog-web trope as my website theme."
+      description="This page was originally designed for my midterm exams; however, in a rare creative drought, I ended up embracing this kind of blog-web trope as my simple website theme."
     />
     <div className="container">
       <div id="previews">

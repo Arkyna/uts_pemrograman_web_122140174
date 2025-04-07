@@ -13,7 +13,7 @@ const Previews = ({
   ],
 }) => {
   return (
-    
+
     <div className="flex flex-col items-center sm:flex-row sm:items-center sm:justify-center gap-6 w-[90%] my-20 mx-auto bg-transparent">
       {images.map((img, index) => (
         <div key={index} className="basis-full sm:basis-[31%] text-center">
@@ -22,8 +22,9 @@ const Previews = ({
             <img
               src={img.src}
               alt={img.alt}
-              className="w-full rounded-[10px] block shadow-[0_0_10px_rgba(0,0,0,0.1)] hover:opacity-80 transition-opacity"
+              className="w-full rounded-[10px] block shadow-[0_0_10px_rgba(0,0,0,0.1)] transition-all hover:shadow-[0_0_15px_rgba(255,255,255,0.8)] hover:opacity-80"
             />
+
           </Link>
         </div>
       ))}

@@ -1,17 +1,10 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import bgImage from "../../assets/Untitled-1a.png";
-import game1Img from "../../assets/game1.jpg"; 
-import game2Img from "../../assets/game2.jpg";
 import LoadingScreen from '../misc/LoadingScreen';
 
 const getApiUrl = (endpoint) => {
   const baseUrl = import.meta.env.VITE_API_URL_1;
   return baseUrl.replace(':endpoint', endpoint);
-};
-
-const localGameImages = {
-  "1": game1Img,
-  "2": game2Img,
 };
 
 const useGamesData = () => {
@@ -46,6 +39,19 @@ const Games = () => {
   const [filterText, setFilterText] = useState('');
   const filterInputRef = useRef(null);
 
+  const gameImagesModules = import.meta.glob('../../assets/game*.{jpg,png}', { eager: true });
+
+  const localGameImages = useMemo(() => {
+    const images = {};
+    for (const path in gameImagesModules) {
+      const match = path.match(/game(\d+)\.(png|jpg)$/);
+      if (match) {
+        images[match[1]] = gameImagesModules[path].default;
+      }
+    }
+    return images;
+  }, [gameImagesModules]);
+
   const handleFilterChange = useCallback((e) => {
     setFilterText(e.target.value);
   }, []);
@@ -64,8 +70,8 @@ const Games = () => {
       className="min-h-screen bg-cover bg-center"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
-      <div className="container mx-auto py-20 text-amber-50">
-        <h1 className="text-4xl font-bold text-center mb-10">Games Favorit Saya</h1>
+      <div className="container mx-auto py-20 text-[#F5F5F5]">
+        <h1 className="text-4xl font-bold text-center mb-10">Only Memorables One</h1>
 
         <div className="mb-8 text-center">
           <input
@@ -98,6 +104,7 @@ const Games = () => {
                   </p>
                 )}
                 {game.mode && <p className="mt-2">Mode: {game.mode}</p>}
+                {game.comment && <p className="mt-2">Comment: {game.comment}</p>}
               </div>
             </div>
           ))}

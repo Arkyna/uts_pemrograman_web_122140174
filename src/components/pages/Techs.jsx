@@ -1,17 +1,10 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import bgImage from "../../assets/Untitled-1a.png";
-import tech1Img from "../../assets/tech1.jpg"; 
-import tech2Img from "../../assets/tech2.jpg";
 import LoadingScreen from '../misc/LoadingScreen';
 
 const getApiUrl = (endpoint) => {
   const baseUrl = import.meta.env.VITE_API_URL_2;
   return baseUrl.replace(':endpoint', endpoint);
-};
-
-const localTechImages = {
-  "1": tech1Img,
-  "2": tech2Img,
 };
 
 const useTechData = () => {
@@ -44,13 +37,25 @@ const useTechData = () => {
 
 const Tech = () => {
   const { techData, error, loading } = useTechData();
-
   const [filterText, setFilterText] = useState('');
   const filterInputRef = useRef(null);
 
   const handleFilterChange = useCallback((e) => {
     setFilterText(e.target.value);
   }, []);
+
+  const techImagesModules = import.meta.glob('../../assets/tech*.{jpg,png}', { eager: true });
+
+  const localTechImages = useMemo(() => {
+    const images = {};
+    for (const path in techImagesModules) {
+      const match = path.match(/tech(\d+)\.(png|jpg)$/);
+      if (match) {
+        images[match[1]] = techImagesModules[path].default;
+      }
+    }
+    return images;
+  }, [techImagesModules]);
 
   const filteredTech = useMemo(() => {
     return techData.filter((tech) =>
@@ -67,7 +72,7 @@ const Tech = () => {
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="container mx-auto py-20 text-[#F5F5F5]">
-        <h1 className="text-4xl font-bold text-center mb-10">Tech Favorit Saya</h1>
+        <h1 className="text-4xl font-bold text-center mb-10">Conveniences</h1>
 
         <div className="mb-8 text-center">
           <input
@@ -99,6 +104,7 @@ const Tech = () => {
                   </p>
                 )}
                 {tech.techType && <p className="mt-2">Type: {tech.techType}</p>}
+                {tech.comment && <p className="mt-2">Comment: {tech.comment}</p>}
               </div>
             </div>
           ))}
