@@ -96,7 +96,7 @@ const Games = () => {
               </div>
               <div>
                 <h2 className="text-xl font-semibold">{game.gameName}</h2>
-                {game.publisher && <p className="mt-2">Publisher: {game.publisher}</p>}
+                {game.developer && <p className="mt-2">Developer: {game.publisher}</p>}
                 {game.genre && <p className="mt-2">Genre: {game.genre}</p>}
                 {game.releaseDate && (
                   <p className="mt-2">
